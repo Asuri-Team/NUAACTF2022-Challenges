@@ -1,0 +1,368 @@
+This file details the changelog of Qiling Framework.
+
+------------------------------------
+[Version 1.4.4]: September 24th, 2022
+
+New features:
+- Add r2 extension (#1172)
+- Introduce procfs to Linux OS (#1174)
+- Add a tracer for IDAPro's Tenet plugin (#1205)
+
+Improvements:
+- Collect a few additional DLLs for x8664 (#1167)
+- Use global cwd in thread (#1170)
+- Fix QlLinuxThreadManagement.threads to be updated appropriately (#1180)
+- Fix Unix socket subsystem (#1181)
+- Maintenance PR for security and code quality (#1182 #1195)
+- Enable android 32bit test (#1184)
+- Fix wrong platform_system for unicornafl (#1185)
+- Fix arm thumb mode shellcode emulation (#1187)
+- Pump unicorn version to 2.0.0 (#1189)
+- Procfs improve & pwndbg compatiblity (#1190)
+- Fix example script issues (#1193 #1194)
+- Introduce a human-friendly disassembler (#1196)
+- Fix gdb step/continue handling (#1200)
+- Fix README.md (#1203)
+- Fix typo of default ip 127.0.0.1 (#1205)
+- Temporarily mask Python versions that are not supported by the EVM module (#1208)
+- Windows Maintenance PR (#1210)
+- Improvements around POSIX sockets (#1216)
+- Add x86_64 debug support for Qdb (#1218)
+- Renew code for picohttpd (#1221)
+- Fix missing retaddr_on_stack in Qdb for arm (#1225)
+- Qdb improvments: Mark, Jump and modify register value in qdb (#1226)
+- Allow user to build config from dictionary other than disk file (#1227)
+- fix(ida): replace __getattribute__ with __getattr__ (#1231)
+
+Contributors:
+- jasperla
+- bet4it
+- chinggg
+- elicn
+- vhertz
+- cgfandia-tii
+- wtdcode
+- ucgJhe
+- aquynh
+- kabeor
+- oscardagrach
+- hamarituc
+- EtchProject
+- HackingFrogWithSunglasses
+- xwings
+
+------------------------------------
+[Version 1.4.3]: June 1st, 2022
+
+New features:
+- Introduce PowerPC architecture support (#1140)
+
+Improvements:
+- Fix fuzzing for tendaac15 (#1096)
+- Update unicorn version to 2.0-rc6 (#1100)
+- Implemented a few more Windows msvcrt functions (#1102)
+- Minor PE Loader fix (#1104)
+- Minor quality changes (#1106)
+- Fix cacheflush syscall typo (#1115)
+- Improvements and fixes for Windows and PE (#1118)
+- Add vm_context to EVM hooks (#1119)
+- Load interpreter segments with correct perms and vaddr (#1120)
+- Fix mistakes in fuzz_x8664_linux binary (#1121)
+- Add EVM ABI helpers, fix EVM DBG stack view (#1123)
+- Fix regression caused by missing exception handling when opening socket (#1124)
+- CI improvement (#1128 #1134)
+- Add macho load command 'LC_LOAD_WEAK_DYLIB' support (#1133)
+- Fix breakage of non-Windows binary emulation on Windows host (#1143)
+- Remove misused region bound check of unmap_all (#1144)
+- Change deprecated interfaces of IDA (#1145)
+- Use importlib to retrieve package version (#1146)
+- New and improved gdbserver (#1148)
+- Rewrite package data reading (#1150)
+- Misc improvements (#1154)
+- Fix memory exhaustion problem caused by the logger (#1161)
+
+Contributors:
+- wtdcode
+- aquynh
+- elicn
+- xwings
+- cq674350529
+- elicn
+- TheZ3ro
+- bet4it
+- chinggg
+- kabeor
+- chfl4gs
+- profiles
+- OlfillasOdikno
+- nmantan
+- machinewu
+- nullableVoidPtr
+- Phat3
+
+
+------------------------------------
+[Version 1.4.2]: Feb 13th, 2022
+
+New features:
+- Add stm32f103 support (#1087)
+- Add Arduino Due (SAM3X8E) Support (#1090)
+
+Improvements:
+- ARM exception handler improvements (#1056)
+- UEFI improvements (#1061)
+- Qdb improvements (#1058)
+- Update rich api in evm dbgcui (#1062)
+- Add security coockies back into PE loader for kernel driver (#1063)
+- Fix ql_open_flag_mapping for Linux binary emulation on Windows (#1064)
+- Minor changes and fixes to the tracing module (#1065)
+- Fix unicornafl for linux_x8664 fuzzing example (#1068)
+- Fuzzing improvements (#1075)
+- Add fix and example for openat path traversion (#1076)
+- Fix _CreateFileA params issue (#1079)
+
+Contributors:
+- nmantani
+- hardik05
+- cla7aye15I4nd
+- ucgJhe
+- elicn
+- wtdcode
+- kabeor
+- xwings
+
+
+------------------------------------
+[Version 1.4.1]: Dec 29th, 2021
+
+New features:
+- Introduced riscv, both 32 and 64 (#980)
+- Added U-boot (#1000)
+- Abstract calls to native functions (#1013)
+
+Improvements:
+- Minor improvements to memory module (#1012)
+- Refactored core hooks (#966)
+- update ql.os.posix.const_mapping with more os/arch match (#973)
+- More update in MCU modules (#971)
+- Fix getpeername and getsockname syscalls (#986)
+- Qdb improvements (#999)
+- QNX improvements (#1054)
+
+Contributors:
+- cq674350529
+- ucgJhe
+- cla7aye15I4nd
+- elicn
+- xwings
+
+
+------------------------------------
+[Version 1.4.0]: Oct 20th, 2021
+
+- Added MCU Engine
+- Bug fix for qdb
+- Bug fix for debugger
+- Bug fix for ql.mem
+- Bump to Unicorn 2
+
+
+------------------------------------
+[Version 1.3.0]: Sept 25th, 2021
+
+- Added QNX
+- Aded Dynamically executed QNX
+- Added more Posix syscall
+- Bugfix: GDB server on MIPS binary
+- Major refactor of Windows DLL
+- Add Win32 16bit compatibility file api
+- Fixed ql.mem.search logic
+- ql.arch refactor
+- Added EVM engine
+
+
+------------------------------------
+[Version 1.2.4]: June 15th, 2021
+
+- Added custom engine extension
+- Added more Posix syscall
+- Refactor: Posix syscall
+- Refactor: Memory management
+- Refactor: Heap management
+- Cleanup and getting ready for engine module
+
+
+------------------------------------
+[Version 1.2.3]: March 30th, 2021
+
+- Improved PR #689, Android syscall and test fix
+- GDB speed optimization
+- Fixed return value for uid/gid related syscall
+- Resolved multilevel symbolic links
+- Demigod set.api implementation
+- Added support for arguments inside IDA plugin
+- Major refactor, see commit 4aa8e59e04d5a8a5520e4e1e2595ecc78a80beba
+- Clean and remove rootfs
+- ql.filter now accepts a regular expression
+- consolidate output into verbose
+
+
+------------------------------------
+[Version 1.2.2]: February 8th, 2021
+
+- Fix _acmdln and _wcmdln handling
+- More UEFI refactor
+- Refactor common OS space
+- Bring sality test to work again
+- Clean up more test case
+- First stage multithread rewrite done
+- Updated Qiling(shellcode=) to Qiling(code=), still keeping Qiling(shellcode=) for legacy purpose
+- Added support for SMM_RUNTIME_SERVICES_TABLE
+- Fixed regression in code coverage collection
+- Added generic ql.mem.read_ptr helper function
+- merged UEFI, windows, linux and macos print_function
+- merged UEFI, windows, linux and macos fncc
+- make MacOS uses more Qiling API
+
+
+------------------------------------
+[Version 1.2.1]: January 1st, 2021
+
+- Added support for custom envs variables inside IDA plugin
+- Demigod: Fixed lkm mapping and added support for MIPS32EL
+- Demigod: Added support for Linux x86 32bit
+- Added support for binaries that return from their entrypoint (PE / ELF)
+- Configure Qiling with 'stop_on_stackpointer' or 'stop_on_exit_trap'
+- Add basic Windows driver tests / example
+- UEFI refactor
+
+
+------------------------------------
+[Version 1.2]: November 16th, 2020
+
+- Demigod finally arrived, more information about [Demigod](https://groundx.io/demigod/)
+- Linux: Implement futex bitset && Check library initialization
+- Linux: vfork and fork syscall mappings
+- execve() ql.argv and ql.env fix
+- De-flattern with IDA plugin now supports ARM && ARM64 with experimental IDA mircocode API.
+- Snapshot mechanism allows saving and restoring of OS and Loader information.
+- Welcome Lazymio and Kabeor to the team
+- Improve register handling (uppercase/lowercase) and add LR register support to arm64
+- Fix ELF Memory mapping issues
+- Fixed directory traversal bug
+
+
+------------------------------------
+[Version 1.1.3]: September 30th, 2020
+
+- Added Doogie example and implement more interrupts
+- Added ollvm de-flattern support for IDA plugin
+- Fixed the popup menu doesn't show when the IDA plugin is put into plugins directory
+- Added Json report extension
+- Fix register mapping
+- ql_syscall_writeev: Use ql.dprint instead of checking debug level
+- Added support for fcntl64 F_SETFL and non-blocking sockets 
+- drcov_exact: coverage collection at instruction granularity 
+- Added UDP support
+
+
+------------------------------------
+[Version 1.1.2]: September 6th, 2020
+
+- Qiling Debugger now comes with reverse debugging
+- Added qltool into pypi packages
+- Added more Windows API
+- Add mapper support for standalone disks.
+- More BIOS/DOS interrupts support shipped with fully emulated Petya as a mbr analysis example.
+
+
+------------------------------------
+[Version 1.1.1]: August 23th, 2020
+
+- Fixed Windows "import resource" issue
+- Added ql.save and ql.restore aka Qiling's Snapshot
+- Added ql.os.fd.save() and ql.os.fd.restore() to save file descriptor
+- Added IDA Plugin
+- Test, patch and make sure arm_thumb can work on its own
+- Added Qiling Debugger - Currently only works with MIPS
+- Added experimental 8086 and DOS support.
+- Fixed path transformation on Windows when running Linux.
+- IDA Plugin able to instrument code now
+- Refactor ql.fs_mapper (now ql.os.fs_mapper)
+
+
+------------------------------------
+[Version 1.1]: July 24th, 2020
+
+- More refactors and bug fixes
+- Adding DLL images for PE coverage tracing
+- Added hook_mem_invalid
+- More UEFI API
+
+
+------------------------------------
+[Version 1.1-rc1]: July 17th, 2020
+
+- More refactors and bug fixes
+- More detailed debug output
+- Fix MIPS_EB overflow issue
+- Introduce heap sanitizer
+
+
+------------------------------------
+[Version 1.1-alpha2]: June 26th, 2020
+
+- More refactors and bug fixes
+- Added Key Developers section in CREDITS.TXT
+- Golang compiled binary support
+- custom ql.fs_mapper
+- fixed x86 and arm multithread
+- moved all posix syscall mapping to complete syscall table
+- Supports more Linux syscalls
+- Supports more Windows APIs
+- OnEnter, OnExit for syscall, windows API and Linux LIB C functions
+
+
+------------------------------------
+[Version 1.1-alpha1]: May 26th, 2020
+
+- More refactor and bug fix
+- Support UEFI
+- Added more memory, register related API
+- Support output filtering
+- Support more Linux syscalls
+- Support more Windows APIs
+- Moved more system variable to ql.profile
+- Support shellcode debugging
+- Minor bug fix for gdbserver
+- Welcome KLKS to the team
+
+
+-------------------------------
+[Version 1.0]: April 26th, 2020
+
+- Windows anti anti-debugger, tested with Al-Khaser
+- Support ARM64 Android binary
+
+
+-----------------------------------
+[Version 1.0-rc1]: April 12nd, 2020
+
+- Support debugger: GDB, IDAPro, Radare
+- Support OS profile to customize API output (Windows)
+- Support more Linux syscalls
+- Support more Windows APIs
+- Support MacOS dyld
+
+
+---------------------------------------
+[Version 1.0 beta]: November 14th, 2019
+
+- First public released
+
+
+--------------------------------------------
+[Version 1.0 close alpha]: October 9th, 2019
+
+- Closed alpha test
+
