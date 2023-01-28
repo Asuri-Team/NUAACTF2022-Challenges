@@ -1,0 +1,19 @@
+contract: HiddenSecret2  # Challenge contract name(class name)
+
+# The description will be displayed when players nc to the challenge
+description: |
+  I hide the secret in private. You will never get it.
+  Your goal is to make isSolved() event emitted!
+
+flag: NUAACTF{Private_Is_n0t_r3a1ly_Privacy}
+
+constructor:
+  args: [0x324fb33dbc9c03349b823fff4ca6329bcbfa319399b3ef14169c363c4887a3f4]
+  value: 0
+  gas: 1000000          # The default value is the response value of the eth_estimateGas JSON-RPC
+
+#show_source: False      # Show source option available by default, you need to set False for a reverse contract challenge
+
+solved_event: isSolved  # The default is to use isSolved() view function as solved checker, but emitted event checker is also supported
+
+#deployed_addr: 0xdac17f958d2ee523a2206206994597c13d831ec7  # Use a pre-deployed contract for all players instead of deploying individually
