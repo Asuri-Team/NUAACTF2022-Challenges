@@ -1,0 +1,1 @@
+自己配置的时候需要修改example/.env的WEB3_PROVIDER_URI
