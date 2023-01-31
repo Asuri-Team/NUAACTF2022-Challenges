@@ -1,0 +1,1 @@
+flag = b'NUAACTF{Rs4_1s_so_3aSy_4nd_X0r_1s_t0O_w34k}'
